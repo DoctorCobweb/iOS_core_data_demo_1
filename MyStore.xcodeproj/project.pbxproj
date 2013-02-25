@@ -18,6 +18,9 @@
 		6554B19C16DB11860010BB83 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6554B19B16DB11860010BB83 /* Default@2x.png */; };
 		6554B19E16DB11860010BB83 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6554B19D16DB11860010BB83 /* Default-568h@2x.png */; };
 		6554B1A116DB11860010BB83 /* MyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6554B19F16DB11860010BB83 /* MyStore.xcdatamodeld */; };
+		6554B1A816DB15170010BB83 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6554B1A716DB15170010BB83 /* Storyboard.storyboard */; };
+		6554B1AB16DB19440010BB83 /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554B1AA16DB19440010BB83 /* DeviceViewController.m */; };
+		6554B1B116DB26AA0010BB83 /* DeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554B1B016DB26A90010BB83 /* DeviceDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,11 @@
 		6554B19B16DB11860010BB83 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6554B19D16DB11860010BB83 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6554B1A016DB11860010BB83 /* MyStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyStore.xcdatamodel; sourceTree = "<group>"; };
+		6554B1A716DB15170010BB83 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		6554B1A916DB19440010BB83 /* DeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceViewController.h; sourceTree = "<group>"; };
+		6554B1AA16DB19440010BB83 /* DeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceViewController.m; sourceTree = "<group>"; };
+		6554B1AF16DB26A90010BB83 /* DeviceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceDetailViewController.h; path = ../DeviceDetailViewController.h; sourceTree = "<group>"; };
+		6554B1B016DB26A90010BB83 /* DeviceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceDetailViewController.m; path = ../DeviceDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,11 @@
 				6554B19616DB11860010BB83 /* AppDelegate.h */,
 				6554B19716DB11860010BB83 /* AppDelegate.m */,
 				6554B19F16DB11860010BB83 /* MyStore.xcdatamodeld */,
+				6554B1A716DB15170010BB83 /* Storyboard.storyboard */,
+				6554B1A916DB19440010BB83 /* DeviceViewController.h */,
+				6554B1AA16DB19440010BB83 /* DeviceViewController.m */,
+				6554B1AF16DB26A90010BB83 /* DeviceDetailViewController.h */,
+				6554B1B016DB26A90010BB83 /* DeviceDetailViewController.m */,
 				6554B18E16DB11860010BB83 /* Supporting Files */,
 			);
 			path = MyStore;
@@ -161,6 +174,7 @@
 				6554B19A16DB11860010BB83 /* Default.png in Resources */,
 				6554B19C16DB11860010BB83 /* Default@2x.png in Resources */,
 				6554B19E16DB11860010BB83 /* Default-568h@2x.png in Resources */,
+				6554B1A816DB15170010BB83 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +188,8 @@
 				6554B19416DB11860010BB83 /* main.m in Sources */,
 				6554B19816DB11860010BB83 /* AppDelegate.m in Sources */,
 				6554B1A116DB11860010BB83 /* MyStore.xcdatamodeld in Sources */,
+				6554B1AB16DB19440010BB83 /* DeviceViewController.m in Sources */,
+				6554B1B116DB26AA0010BB83 /* DeviceDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
