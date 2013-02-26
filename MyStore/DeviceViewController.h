@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DeviceViewController : UITableViewController
+@interface DeviceViewController : UITableViewController <UITableViewDataSource>
 
 @property (strong) NSMutableArray *devices;
 

@@ -25,6 +25,8 @@
     return context;
 }
 
+//every time the ui is visited in the app, this controller method is called.
+//to refresh teh data for the view you call '[self.tableView reloadData];'
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
