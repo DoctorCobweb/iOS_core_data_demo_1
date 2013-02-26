@@ -13,6 +13,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *versionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *companyTextField;
 
+@property (strong) NSManagedObject *device;
+
+
 - (IBAction)cancel:(id)sender;
 
 - (IBAction)save:(id)sender;

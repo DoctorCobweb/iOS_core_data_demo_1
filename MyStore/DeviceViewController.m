@@ -7,6 +7,7 @@
 //
 
 #import "DeviceViewController.h"
+#import "DeviceDetailViewController.h"
 
 @interface DeviceViewController ()
 
@@ -29,9 +30,9 @@
     [super viewDidAppear:animated];
     
     // Fetch the devices from persistent data store
-    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSManagedObjectContext *context = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Device"];
-    self.devices = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    self.devices = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
     [self.tableView reloadData];
 }
@@ -90,6 +91,49 @@
     [cell.detailTextLabel setText:[device valueForKey:@"company"]];
     
     return cell;
+}
+
+- (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+
+//when a user swipes the row, it indicates a want to delete the row
+//this method is called due to the action, allowing you to delete
+//the row from the database, tableview and internal devices array
+//defined here in the implementation file.
+- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    //as always, get the context for the managed objects.
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    //check to see if the gesture was a delete gesture
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //delete object from the database
+        [context deleteObject:[self.devices objectAtIndex:indexPath.row]];
+        
+        NSError *error = nil;
+        //commit the change by calling the save method
+        if (![context save:&error]) {
+            NSLog(@"Can't delete %@ %@", error, [error localizedDescription]);
+            return;
+        }
+        
+        //remove device from the devices array & table view.
+        [self.devices removeObjectAtIndex:indexPath.row];
+[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+    }
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"UpdateDevice"]) {
+        NSManagedObject *selectedDevice = [self.devices objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        DeviceDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.device = selectedDevice;
+    }
 }
 
 /*
